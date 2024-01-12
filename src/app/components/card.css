@@ -1,0 +1,72 @@
+.card-section * {
+    display: flex;
+}
+.client-name-container {
+    gap: 20px;
+    justify-content: space-between;
+}
+.single-client-info h2 {
+    font-size: 14px;
+}
+
+.single-client-info img,.kanban-bottom-section img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.single-client-info {
+    align-items: center;
+    gap: 5px;
+}
+.card-section {
+    row-gap: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px 10px;
+}
+.kanban-card-container {
+    width: 320px;
+}
+.kanban-card-container svg {
+    width: 15px;
+    height: 15px;
+}
+.kanban-bottom-section {
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+.kanban-desc-section p {
+    font-size: 14px;
+}
+.kanban-desc-section {
+    justify-content: space-between;
+    align-items: center;
+}
+.task-que-container {
+    background-color: #f2f4f7;
+    padding: 5px;
+    align-items: center;
+    gap: 5px;
+}
+.task-que-container h4 {
+    font-size: 12px;
+}
+.kanban-bottom-section h4 {
+    font-size: 12px;
+}
+.comment-container, .attachment-container, .date-container {
+    gap: 5px;
+}
+h4.items-contaier {
+    height: 35px;
+    width: 35px;
+    background-color: #f2f4f7;
+    border-radius: 50%;
+    line-height: 35px;
+    padding: 0 8px;
+}
+a.add-btn {
+    cursor: pointer;
+}

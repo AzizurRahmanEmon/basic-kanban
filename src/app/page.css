@@ -1,0 +1,60 @@
+.kanban-container {
+    display: flex;
+    overflow: scroll;
+    gap: 20px;
+    padding: 20px 30px;
+    height: 100vh;
+}
+.kanban-column {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f4f7;
+    padding: 20px 10px;
+}
+.kanban-column-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h4.completed-task-number {
+    background-color: #b3bec7;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+.heading-shape {
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.title-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.heading-shape.red {
+    background-color: #d21010;
+}
+.heading-shape.blue {
+    background-color: #00b5ff;
+}
+.heading-shape.yellow {
+    background-color: #ffe700;
+}
+
+.kanban-main-card-container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.kanban-column-heading-container h3 {
+    font-size: 20px;
+}
