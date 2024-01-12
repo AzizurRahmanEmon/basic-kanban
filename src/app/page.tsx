@@ -1,10 +1,12 @@
+import { data } from '../../public/db/mock-data'
 import Card from './components/Card'
 import './page.css'
 
-export default function Home() {
+
+export default async function Home() {
   return (
     <main className='kanban-main'>
-      <div className='kanban-container'>
+      {data?(<div className='kanban-container'>
         <div className='kanban-column'>
           <div className="kanban-column-heading-container">
           <div className="title-container">
@@ -14,8 +16,8 @@ export default function Home() {
             <h4 className="completed-task-number">0</h4>
           </div>
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
+          {data.slice(0,10).map((item, index) => (
+            <Card key={index} data={item}/>
           ))}  
           </div>
           
@@ -29,8 +31,8 @@ export default function Home() {
             <h4 className="completed-task-number">0</h4>
           </div>
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
+          {data.slice(10,20).map((item, index) => (
+            <Card key={index} data={item}/>
           ))}  
           </div>
         </div>
@@ -45,9 +47,9 @@ export default function Home() {
           
 
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
-          ))}  
+          {data.slice(20,30).map((item, index) => (
+            <Card key={index} data={item}/>
+            ))}  
           </div>
         </div>
         <div className='kanban-column'>
@@ -57,8 +59,8 @@ export default function Home() {
 
           </div>
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
+          {data.slice(30,40).map((item, index) => (
+            <Card key={index} data={item}/>
           ))}  
           </div>
         </div>
@@ -69,8 +71,8 @@ export default function Home() {
 
           </div>
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
+          {data.slice(40,50).map((item, index) => (
+            <Card key={index} data={item}/>
           ))}  
           </div>
         </div>
@@ -80,12 +82,14 @@ export default function Home() {
             <h4 className="completed-task-number">0</h4>
           </div>
           <div className="kanban-main-card-container">
-          {Array(10).fill(undefined).map((_, index) => (
-            <Card key={index} />
+          {data.slice(50,60).map((item, index) => (
+            <Card key={index} data={item}/>
           ))}  
           </div>
         </div>
-      </div>
+      </div>):(<div>
+        No Data Found
+      </div>)}
     </main>
   )
 }

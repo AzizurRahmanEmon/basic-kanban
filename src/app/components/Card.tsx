@@ -4,7 +4,20 @@ import { faLayerGroup, faClipboard, faComment, faPaperclip, faCalendarDay } from
 import './card.css'
 import { useState } from 'react';
 import AddAttachmentModal from './AddAttachmentModal';
-const Card = () => {
+
+interface Props {
+  data: {
+    id: number;
+    admin_name: string;
+    client_name: string;
+    admin_img: string;
+    client_img: string;
+    task: number;
+    comment_amount: number;
+    total_file: number;
+  }
+}
+const Card = ({data} : Props) => {
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   const toggleOpen = () => {
@@ -19,12 +32,12 @@ const Card = () => {
       <div className="card-section">
         <div className="client-name-container">
           <div className="single-client-info">
-            <img src="img/img-1.jpg" alt="" />
-            <h2>Sara Wilson</h2>
+            <img src={data.admin_img} alt="" />
+            <h2>{data.admin_name}</h2>
           </div>
           <div className="single-client-info">
-            <img src="img/img-2.jpg" alt="" />
-            <h2>Jack Daniel</h2>
+            <img src={data.client_img} alt="" />
+            <h2>{data.client_name}</h2>
           </div>
         </div>
         <div className="kanban-desc-section">
@@ -37,12 +50,12 @@ const Card = () => {
           
         </div>
         <div className='kanban-bottom-section'>
-            <img src="img/img-1.jpg" alt="" />
-            <img src="img/img-2.jpg" alt="" />
-            <h4 className="items-contaier">12+</h4>
+            <img src={data.admin_img} alt="" />
+            <img src={data.client_img} alt="" />
+            <h4 className="items-contaier">{data.task}+</h4>
             <div className="comment-container">
                 <FontAwesomeIcon icon={faComment} />
-                <h4>15</h4>
+                <h4>{data.comment_amount}</h4>
             </div>
             <div className="attachment-container">
                 <a 
@@ -52,7 +65,7 @@ const Card = () => {
                 >
                   <FontAwesomeIcon icon={faPaperclip} />
                 </a>
-                <h4>25</h4>
+                <h4>{data.total_file}</h4>
             </div>
             <div className="date-container">
                 <FontAwesomeIcon icon={faCalendarDay} />

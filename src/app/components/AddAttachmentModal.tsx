@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import './modal.css';
+
 type Props = {
   openModal: boolean;
   toggleClose: () => void;
@@ -55,7 +57,8 @@ const AddAttachmentModal = ({openModal, toggleClose } : Props) => {
         <button className='close-modal-btn' onClick={toggleClose}>x</button>
       </Modal.Header>
       <Modal.Body>
-        <input type="file" multiple onChange={handleFileChange} />
+        <div className="input-container d-flex justify-content-between">
+          <input type="file" multiple onChange={handleFileChange} />
         {selectedFiles && selectedFiles.length > 0 && (
           <ul>
             {Array.from(selectedFiles).map((file) => (
@@ -67,10 +70,13 @@ const AddAttachmentModal = ({openModal, toggleClose } : Props) => {
         )}
         <button onClick={handleUpload} disabled={!selectedFiles || selectedFiles.length === 0}>
           Upload Files
-        </button>
+        </button> 
+        </div>
+       
+        
 
         {uploadedFiles.length > 0 && (
-          <div>
+          <div className='uploaded-file-container'>
             <h4>Uploaded Files:</h4>
             <ul>
               {uploadedFiles.map((fileName) => (

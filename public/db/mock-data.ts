@@ -1,4 +1,4 @@
-[{
+export const data = [{
   "id": 1,
   "admin_name": "Earle Antoniat",
   "client_name": "Goddard Whickman",
