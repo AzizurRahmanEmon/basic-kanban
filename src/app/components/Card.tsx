@@ -1,7 +1,19 @@
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLayerGroup, faClipboard, faComment, faPaperclip, faCalendarDay } from '@fortawesome/free-solid-svg-icons'; // Import the specific icon
 import './card.css'
+import { useState } from 'react';
+import AddAttachmentModal from './AddAttachmentModal';
 const Card = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const toggleOpen = () => {
+    setOpenModal(true)
+  }
+
+  const toggleClose = () => {
+    setOpenModal(false)
+  }
   return (
     <div className='kanban-card-container'>
       <div className="card-section">
@@ -33,7 +45,11 @@ const Card = () => {
                 <h4>15</h4>
             </div>
             <div className="attachment-container">
-                <a role='button' className='add-btn'>
+                <a 
+                role='button' 
+                className='add-btn'
+                onClick={toggleOpen}
+                >
                   <FontAwesomeIcon icon={faPaperclip} />
                 </a>
                 <h4>25</h4>
@@ -44,6 +60,10 @@ const Card = () => {
             </div>
         </div>
       </div>
+      <AddAttachmentModal 
+      openModal={openModal}
+      toggleClose={toggleClose}
+      />
     </div>
   );
 }
